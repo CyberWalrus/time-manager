@@ -13,16 +13,14 @@
     },
     "project": "./tsconfig.json"
   },
-  "extends": [
-    "airbnb-typescript",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "plugin:jsx-a11y/recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+  "extends": ["airbnb-typescript", "prettier"],
+  "plugins": [
+    "prettier",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "@typescript-eslint"
   ],
-  "plugins": ["react", "react-hooks", "jsx-a11y", "@typescript-eslint"],
   "settings": {
     "react": {
       "version": "detect"

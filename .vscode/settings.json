@@ -9,7 +9,6 @@
     "smallsquare",
     "targetsize"
   ],
-  "prettier.eslintIntegration": true,
   "eslint.validate": [
     { "language": "typescript", "autoFix": true },
     { "language": "typescriptreact", "autoFix": true }

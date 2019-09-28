@@ -1,84 +1,97 @@
 /* tslint:disable:object-literal-sort-keys */
-import * as path from 'path';
-import * as webpack from 'webpack';
-import * as webpackDevServer from 'webpack-dev-server';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
+import * as path from "path";
+import * as webpack from "webpack";
+import * as webpackDevServer from "webpack-dev-server";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 
-const root = (args: string): string => path.join(...[__dirname].concat('./', args));
+const root = (args: string): string =>
+  path.join(...[__dirname].concat("./", args));
 
 const webpackConfig = {
   entry: {
-    bundle: [root('src/index.tsx'), root('style/style.scss')],
+    bundle: [root("src/index.tsx")]
   },
   output: {
-    filename: 'js/main.[hash].js',
-    path: root('build/'),
+    filename: "js/main.[hash].js",
+    path: root("build/")
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.join(__dirname, "build"),
     compress: true,
     port: 8080,
     historyApiFallback: true,
-    open: true,
+    open: true
   },
-  mode: 'development',
+  mode: "development",
   module: {
     rules: [
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: require.resolve('url-loader'),
+        loader: require.resolve("url-loader"),
         options: {
           limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
+          name: "static/media/[name].[hash:8].[ext]"
+        }
       },
       {
         test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
-        loader: ['babel-loader', 'ts-loader'],
+        loader: ["babel-loader", "ts-loader"]
       },
       {
         test: /\.scss$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'css/[name].css',
-            },
+              name: "css/[name].css"
+            }
           },
           {
-            loader: 'extract-loader',
+            loader: "extract-loader"
           },
           {
-            loader: 'css-loader?-url',
+            loader: "css-loader?-url"
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader"
           },
           {
-            loader: 'sass-loader',
-          },
-        ],
-      },
-    ],
+            loader: "sass-loader"
+          }
+        ]
+      }
+    ]
   },
   resolve: {
-    modules: [path.resolve('./'), 'node_modules', 'client'],
-    extensions: ['.ts', '.tsx', '.js', 'json'],
+    modules: [path.resolve("./"), "node_modules", "client"],
+    alias: {
+      "components/*": root("./src/components/*"),
+      "constants/*": root("./src/constants/*"),
+      "containers/*": root("./src/containers/*"),
+      "hooks/*": root("./src/hooks/*"),
+      "pages/*": root("./src/pages/*"),
+      "store/*": root("./src/store/*"),
+      "types/*": root("./src/types/*"),
+      "utils/*": root("./src/utils/*"),
+      "src/*": root("./src/*"),
+      "build/*": root("./build/*")
+    },
+    extensions: [".ts", ".tsx", ".js", "json"]
   },
   plugins: [
     new CopyPlugin([
       {
-        from: root('public/'),
-        to: root('build/'),
-      },
+        from: root("public/"),
+        to: root("build/")
+      }
     ]),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: root('public/index.html'),
+      template: root("public/index.html"),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -89,12 +102,12 @@ const webpackConfig = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
-      },
+        minifyURLs: true
+      }
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
-  devtool: 'source-map',
+  devtool: "source-map"
 };
 
 export default webpackConfig;

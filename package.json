@@ -1,0 +1,46 @@
+{
+  "name": "time-manager",
+  "version": "0.0.1",
+  "description": "Cyber Walrus pet project",
+  "main": "jest.config.js",
+  "dependencies": {
+    "@types/react": "16.9.3",
+    "@types/react-dom": "16.9.1",
+    "react": "16.10.1",
+    "react-dom": "16.10.1"
+  },
+  "devDependencies": {
+    "@types/node": "12.7.8",
+    "@typescript-eslint/eslint-plugin": "2.3.1",
+    "@typescript-eslint/parser": "2.3.1",
+    "eslint": "6.4.0",
+    "eslint-config-airbnb-typescript": "5.0.0",
+    "eslint-config-prettier": "6.3.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "2.1.1",
+    "prettier": "1.18.2",
+    "ts-node": "8.4.1",
+    "typescript": "3.6.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyberWalrus/time-manager.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "redux"
+  ],
+  "author": "Andrey Pakhomov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CyberWalrus/time-manager/issues"
+  },
+  "homepage": "https://github.com/CyberWalrus/time-manager#readme"
+}

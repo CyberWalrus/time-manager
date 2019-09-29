@@ -4,6 +4,6 @@ import { SetMessage } from 'types/store/condition';
 export const ActionCreator = {
   setMessage: (value: string): SetMessage => ({
     payload: value,
-    type: ActionType.SET_MESSAGE,
-  }),
+    type: ActionType.SET_MESSAGE
+  })
 };

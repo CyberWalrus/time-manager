@@ -2,7 +2,7 @@ import { State, Action } from 'types/store/condition';
 import { ActionType } from 'constants/store/condition';
 
 export const initialState: State = {
-  message: 'test',
+  message: 'test'
 };
 
 export const reducer = (state: State = initialState, action: Action): State => {

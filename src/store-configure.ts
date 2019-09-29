@@ -9,13 +9,17 @@ import reducer from 'store/store';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [NameSpace.CONDITION],
+  whitelist: [NameSpace.CONDITION]
 };
 
 const reducers = persistReducer(persistConfig, reducer);
-const middlewares = [thunk];
+const middleWares = [thunk];
 
-const store = createStore(reducers, undefined, composeWithDevTools(applyMiddleware(...middlewares)));
+const store = createStore(
+  reducers,
+  undefined,
+  composeWithDevTools(applyMiddleware(...middleWares))
+);
 const persistor = persistStore(store);
 
 export { store, persistor };

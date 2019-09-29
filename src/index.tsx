@@ -15,7 +15,7 @@ const init = (): void => {
         </Router>
       </PersistGate>
     </Provider>,
-    document.querySelector('#app'),
+    document.querySelector('#app')
   );
 };
 

@@ -1,5 +1,5 @@
-import { Action as ReduxAction } from "redux";
-import { ActionType } from "constants/store/condition";
+import { Action as ReduxAction } from 'redux';
+import { ActionType } from 'constants/store/condition';
 
 export interface State {
   message: string;

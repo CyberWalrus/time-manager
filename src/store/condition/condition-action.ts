@@ -1,4 +1,4 @@
-import { ActionType } from "constants/store/condition";
+import { ActionType } from 'constants/store/condition';
 import { SetMessage } from 'types/store/condition';
 
 export const ActionCreator = {

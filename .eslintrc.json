@@ -13,13 +13,13 @@
     },
     "project": "./tsconfig.json"
   },
-  "extends": ["airbnb-typescript"],
+  "extends": ["airbnb-typescript","plugin:@typescript-eslint/recommended"],
   "plugins": [
     "import",
     "react",
     "react-hooks",
     "jsx-a11y",
-    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint",
     "prettier"
   ],
   "settings": {
@@ -28,6 +28,7 @@
     }
   },
   "rules": {
+    "import/prefer-default-export": 0,    
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/no-unresolved": "off",

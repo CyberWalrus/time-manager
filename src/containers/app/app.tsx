@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Main from 'pages/main/main';
 
-const App = () => {
-  return <Main />
-}
+const App = (): ReactElement => <Main />;
 
 export default App;

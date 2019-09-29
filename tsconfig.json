@@ -4,7 +4,7 @@
     "outDir": "server_compiled",
     "sourceMap": true,
     "module": "commonjs",
-    "target": "es2019",
+    "target": "es2018",
     "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -14,11 +14,19 @@
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "client/*": ["client/*"],
+      "components/*": ["src/components/*"],
+      "constants/*": ["src/constants/*"],
+      "containers/*": ["src/containers/*"],
+      "hooks/*": ["src/hooks/*"],
+      "pages/*": ["src/pages/*"],
+      "store/*": ["src/store/*"],
+      "types/*": ["src/types/*"],
+      "utils/*": ["src/utils/*"],
+      "src/*": ["src/*"],
       "build/*": ["build/*"]
     }
   },
-  "include": ["./**/*.ts", "./**/*.tsx", "client/index.tsx"],
+  "include": ["./**/*.ts", "./**/*.tsx"],
   "exclude": [
     "node_modules",
     "build",
